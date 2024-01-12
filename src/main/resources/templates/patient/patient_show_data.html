@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.ns/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Patient</title>
+</head>
+<body>
+<main layout:fragment="main">
+    <!-- Kommentare in HTML sehen so aus -->
+    <!-- mit "${}" werden Variablen abgerufen, die im Controller (hier PatientController.java) dem model hinzugefügt wurden (sh. "modelAndView.addObject()") -->
+    <!-- da patient, das Objekt welches durch den Controller übergeben wurde, verschiedene Attribute hat, können diese mit th:field="*{Attributname}" abgerufen werden -->
+    <div layout:fragment="content" th:object="${patient}">
+        <a class="btn btn-outline-primary mb-5" th:text="#{link.back}" th:title="#{link.back.title}" href="/index"></a>
+        <h1 th:text="*{firstName} + ' ' + *{lastName}"></h1>
+        <!-- die Klasse "row" teilt die Seite in Zeilen auf, "col" teilt die Seiten in Spalten auf -->
+        <!-- um col benutzen zu können, muss die Klasse "col" innerhalb eines HTML-Tags mit der Klasse "row" sein -->
+        <!-- wenn nur "col" angegeben wird, macht Bootstrap die Größe der Spalten automatisch -->
+        <!-- mit col-8 nimmt die jeweilige Spalte 8/12 der Breite ein -->
+        <!-- col-12 nimmt die volle Breite ein -->
+        <div class="row">
+            <div class="col-8">
+                <div>
+                    <label class="font-italic" th:text="#{patient.lastName}"></label>
+                    <p th:text="*{lastName}"></p>
+                </div>
+                <div>
+                    <label class="font-italic" th:text="#{patient.firstName}"></label>
+                    <p th:text="*{firstName}">
+                </div>
+                <div>
+                    <label class="font-italic" th:text="#{patient.birthday}"></label>
+                    <p th:text="*{birthday}">
+                </div>
+                <div>
+                    <label class="font-italic" th:text="#{patient.address}"></label>
+                    <p th:text="*{address}">
+                </div>
+                <div>
+                    <label class="font-italic" th:text="#{patient.telephone}"></label>
+                    <p th:if="${patient.getTelephone()!=null}" th:text="*{telephone}"></p>
+                    <p th:unless="${patient.getTelephone()!=null}" th:text="#{noEntry}"></p>
+                </div>
+                <div>
+                    <label class="font-italic" th:text="#{patient.mail}"></label>
+                    <p th:if="${patient.getEmail()!=null}" th:text="*{getEmail()}"></p>
+                    <p th:unless="${patient.getEmail()!=null}" th:text="#{noEntry}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

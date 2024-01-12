@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.ns/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content=""/>
+    <title layout:title-pattern="$CONTENT_TITLE"></title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/webjars/font-awesome/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}"/>
+</head>
+<body class="pt-5">
+<main class="container-fluid js-only" layout:fragment="main">
+    <div class="divider"><span class="divider-separator"></span></div>
+    <div layout:fragment="content">
+        <h1>Willkommen</h1>
+    </div>
+</main>
+<script src="/webjars/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- fontawesome ist eine Bibliothek für Icons -->
+<script src="/webjars/font-awesome/js/all.min.js"></script>
+</body>
+</html>

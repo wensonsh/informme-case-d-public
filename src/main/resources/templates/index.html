@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.ns/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<main layout:fragment="main">
+    <div layout:fragment="content">
+        <h1 th:text="#{index.welcome}">Willkommen!</h1>
+        <p th:text="#{index.text}"></p>
+        <a href="/patient/show" class="btn btn-outline-primary" th:text="#{patient.getRandom}"></a>
+        <p class="mt-5" th:text="#{index.subtext}"></p>
+        <a target="_blank" href="https://www.figma.com/proto/bQ9U0f4Wtk5WUjfsQFEBLY/Digital-Health?type=design&node-id=2-3&t=TZfYTJ2mVrk1fAir-1&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=2%3A3&mode=design" th:text="#{link.text.figma}" th:title="#{link.title.figma}"></a>
+    </div>
+</main>
+</body>
+</html>
