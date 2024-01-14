@@ -9,7 +9,7 @@ Klicken Sie sich gerne durch und erkunden Sie die vorgesehenen Funktionalitäten
 
 
 Voraussetzungen:
-1. Zugriff zu einer Plattform, mit der Sie REST-Anfragen senden können (z.B. Postman)
+1. Zugriff auf ein Tool, mit der Sie REST-Anfragen senden können (z.B. Postman)
 2. Java (installierte jdk)
 
 
